@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "src",
+    "baseUrl": "src/app",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
@@ -11,16 +11,18 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es5",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
+    "typeRoots": ["node_modules/@types"],
     "paths": {
+      "@env": ["./../environments/environment.ts"],
+      "@utils": ["./../utils"],
+      "@utils/*": ["./../utils/*"],
       "@root": ["./root"],
       "@root/*": ["./root/*"],
+      "@core": ["./core"],
+      "@core/*": ["./core/*"],
+      "testlib": ["dist/testlib"],
+      "testlib/*": ["dist/testlib/*"]
     },
-    "lib": [
-      "es2018",
-      "dom"
-    ]
+    "lib": ["es2018", "dom"]
   }
 }

@@ -2,22 +2,15 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "outDir": "../out-tsc/spec",
-    "types": [
-      "jasmine",
-      "node"
-    ],
-    "baseUrl": ".",
+    "types": ["jasmine", "node"],
+    "baseUrl": "./app",
     "paths": {
-      "@root": ["./src/root"],
-      "@root/*": ["./src/root/*"],
-    },
+      "@root": ["./root"],
+      "@root/*": ["./root/*"],
+      "@core": ["./core"],
+      "@core/*": ["./core/*"]
+    }
   },
-  "files": [
-    "test.ts",
-    "polyfills.ts"
-  ],
-  "include": [
-    "**/*.spec.ts",
-    "**/*.d.ts"
-  ]
+  "files": ["test.ts", "polyfills.ts"],
+  "include": ["**/*.spec.ts", "**/*.d.ts"]
 }

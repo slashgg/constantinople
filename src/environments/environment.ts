@@ -1,11 +1,26 @@
+import { Config, ConfigOptions } from '@utils/models/config';
+import { Environment } from '@utils/models/environment';
+
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-export const environment = {
-  production: false,
-  baseUrl: '',
+const configOpts: ConfigOptions = {
+  localDomain: 'http://localhost:4200',
+  env: Environment.Development,
+  authDomain: 'http://localhost:52215',
+  auth: {
+    authority: 'http://localhost:52215',
+    redirectUri: `/oauth/login-callback`,
+    silentRedirectUri: `/oauth/silent-callback`,
+    logoutRedirectUri: `/oauth/logout-callback`,
+    client_id: 'constantinople',
+    response_type: 'id_token token',
+    scope: 'openid profile email @slashgg/alexandria.admin roles',
+  },
 };
+
+export const config = new Config(configOpts);
 
 /*
  * For easier debugging in development mode, you can import the following file
