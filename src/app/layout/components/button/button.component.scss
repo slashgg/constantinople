@@ -1,0 +1,58 @@
+.btn {
+  &.primary {
+    background-color: var(--primary);
+    color: var(--primary-white);
+
+    &.hollow {
+      background-color: transparent;
+      border-color: var(--primary);
+      color: var(--primary);
+
+      &:hover {
+        color: var(--primary-white);
+      }
+    }
+
+    &:hover {
+      background-color: var(--primary-light);
+    }
+  }
+
+  &.secondary {
+    background-color: var(--secondary);
+    color: var(--secondary-white);
+
+    &.hollow {
+      background-color: transparent;
+      border-color: var(--secondary);
+      color: var(--secondary);
+
+      &:hover {
+        color: var(--secondary-white);
+      }
+    }
+
+    &:hover {
+      background-color: var(--secondary-light);
+    }
+  }
+
+  &.danger {
+    background-color: var(--danger);
+    color: var(--danger-white);
+
+    &.hollow {
+      background-color: transparent;
+      border-color: var(--danger);
+      color: var(--danger);
+
+      &:hover {
+        color: var(--danger-white);
+      }
+    }
+
+    &:hover {
+      background-color: var(--danger-light);
+    }
+  }
+}

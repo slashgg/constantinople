@@ -1,0 +1,20 @@
+<nav class="shadow px-2 topbar" *ngIf="user">
+  <div class="flex justify-end">
+    <gg-dropdown [closeOnHoverOut]="true">
+      <div dropdown-head>
+        <div class="py-2 select-none cursor-pointer">
+          {{ user.username }}
+        </div>
+      </div>
+      <div dropdown-tail>
+        <gg-interactable (click)="logout()">
+          <p class="p-2">
+            <a class="topbar__link">
+              Logout
+            </a>
+          </p>
+        </gg-interactable>
+      </div>
+    </gg-dropdown>
+  </div>
+</nav>

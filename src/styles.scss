@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./variables.scss";
+@import "./tailwind-output.css";
+
+/* stylelint-disable */
+html {
+  font-size: 10px;
+  height: 100%;
+}
+
+* > * {
+  user-select: text;
+}
+
+p,
+a,
+div,
+span,
+strong,
+nav,
+article,
+section,
+header,
+footer {
+  font-size: 1.6rem;
+}
+
+a {
+  text-decoration: none;
+  color: initial;
+}
+
+body {
+  height: 100%;
+}
+
+/*stylelint enable */

@@ -1,0 +1,10 @@
+<gg-clickout (clickout)="closeDropdown()">
+  <div class="relative">
+    <gg-dropdown-head (click)="toggleDropdown()">
+      <ng-content select="[dropdown-head]"></ng-content>
+    </gg-dropdown-head>
+    <gg-dropdown-tail *ngIf="showDropdown">
+      <ng-content select="[dropdown-tail]"></ng-content>
+    </gg-dropdown-tail>
+  </div>
+</gg-clickout>

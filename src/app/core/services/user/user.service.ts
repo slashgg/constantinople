@@ -1,14 +1,14 @@
-import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
-import { User } from '@core/models/user';
-import { AppState } from '@core/stores/app.state';
-import { RemoveUser, SetUser } from '@core/stores/user';
-import { config } from '@env';
-import { Store } from '@ngrx/store';
-import { User as OIDCUser, UserManager, WebStorageStateStore } from 'oidc-client';
+import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
+import { User } from "@core/models/user";
+import { AppState } from "@core/stores/app.state";
+import { RemoveUser, SetUser } from "@core/stores/user";
+import { config } from "@env";
+import { Store } from "@ngrx/store";
+import { User as OIDCUser, UserManager, WebStorageStateStore } from "oidc-client";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class UserService {
   public userManager: UserManager;
@@ -45,7 +45,7 @@ export class UserService {
 
   public redirectToLogin(redirectTo?: string) {
     if (!redirectTo) {
-      redirectTo = '';
+      redirectTo = "";
     }
     this.userManager.clearStaleState();
     this.userManager.signinRedirect({ returnTo: redirectTo });
@@ -63,6 +63,10 @@ export class UserService {
     const authUser = await this.userManager.signinRedirectCallback();
   }
 
+  public logout() {
+    this.userManager.signoutRedirect();
+  }
+
   private handleUserLoaded = (authUser: OIDCUser) => {
     const user = new User({
       username: authUser.profile.name,
@@ -72,6 +76,8 @@ export class UserService {
 
     const staff = user.isStaff();
     if (!staff) {
+      this.userManager.removeUser();
+      this.store.dispatch(new RemoveUser());
       return;
     }
 
