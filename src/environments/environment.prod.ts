@@ -6,11 +6,12 @@ import { Environment } from '@utils/models/environment';
 // The list of file replacements can be found in `angular.json`.
 
 const configOpts: ConfigOptions = {
+  apiURL: 'https://harbor.slash.gg',
   localDomain: 'http://localhost:4200',
   env: Environment.Development,
   authDomain: 'http://localhost:52215',
   auth: {
-    authority: 'http://localhost:52215',
+    authority: 'https://passport.slash.gg',
     redirectUri: `/oauth/signin-callback`,
     silentRedirectUri: `/oauth/silent-callback`,
     logoutRedirectUri: `/oauth/logout-callback`,

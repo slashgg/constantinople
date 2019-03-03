@@ -1,14 +1,14 @@
-import { Injectable } from "@angular/core";
-import { Router } from "@angular/router";
-import { User } from "@core/models/user";
-import { AppState } from "@core/stores/app.state";
-import { RemoveUser, SetUser } from "@core/stores/user";
-import { config } from "@env";
-import { Store } from "@ngrx/store";
-import { User as OIDCUser, UserManager, WebStorageStateStore } from "oidc-client";
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { User } from '@core/models/user';
+import { AppState } from '@core/stores/app.state';
+import { RemoveUser, SetUser } from '@core/stores/user';
+import { config } from '@env';
+import { Store } from '@ngrx/store';
+import { User as OIDCUser, UserManager, WebStorageStateStore } from 'oidc-client';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class UserService {
   public userManager: UserManager;
@@ -22,7 +22,7 @@ export class UserService {
       client_id: config.auth.client_id,
       response_type: config.auth.response_type,
       scope: config.auth.scope,
-      userStore: new WebStorageStateStore({ store: localStorage }),
+      // userStore: new WebStorageStateStore({ store: localStorage }),
       loadUserInfo: true,
     });
 
@@ -45,7 +45,7 @@ export class UserService {
 
   public redirectToLogin(redirectTo?: string) {
     if (!redirectTo) {
-      redirectTo = "";
+      redirectTo = '';
     }
     this.userManager.clearStaleState();
     this.userManager.signinRedirect({ returnTo: redirectTo });
@@ -81,7 +81,7 @@ export class UserService {
       return;
     }
 
-    this.store.dispatch(new SetUser(user));
+    this.store.dispatch(new SetUser(user, authUser.access_token));
   };
 
   private handleUserUnloaded = (silentSignin?: boolean) => {

@@ -6,6 +6,7 @@ import { Environment } from '@utils/models/environment';
 // The list of file replacements can be found in `angular.json`.
 
 const configOpts: ConfigOptions = {
+  apiURL: 'http://localhost:5000',
   localDomain: 'http://localhost:4200',
   env: Environment.Development,
   authDomain: 'http://localhost:52215',

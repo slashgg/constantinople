@@ -7,7 +7,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class InteractableComponent {
   @Output() click: EventEmitter<void> = new EventEmitter<void>();
 
-  onClick() {
+  onClick(event: Event) {
+    event.stopPropagation();
     this.click.emit();
   }
 }

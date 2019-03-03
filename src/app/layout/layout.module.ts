@@ -7,10 +7,8 @@ import { DropdownHeadComponent } from 'layout/components/dropdown/dropdown-head'
 import { DropdownTailComponent } from 'layout/components/dropdown/dropdown-tail';
 import { InteractableComponent } from 'layout/components/interactable';
 import { TailComponent } from 'layout/components/tail';
-import { TopbarComponent } from 'layout/components/topbar';
 
 const COMPONENTS = [
-  TopbarComponent,
   TailComponent,
   InteractableComponent,
   DropdownComponent,

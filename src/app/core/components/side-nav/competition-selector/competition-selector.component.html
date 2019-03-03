@@ -1,0 +1,6 @@
+<div class="my-2">
+  <a routerLink="/competitions" *ngIf="competition; else noCompetition">{{ competition.name }}</a>
+  <ng-template #noCompetition>
+    <a routerLink="/competitions">No competition selected</a>
+  </ng-template>
+</div>

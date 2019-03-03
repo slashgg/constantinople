@@ -1,0 +1,5 @@
+<div>
+  <div *ngFor="let competition of competitions">
+    <gg-competition-item [competition]="competition" (select)="onSelect($event)"></gg-competition-item>
+  </div>
+</div>

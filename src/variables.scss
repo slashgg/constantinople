@@ -8,9 +8,10 @@
 
   --white: #ffffff;
   --primary-white: #e6eff8;
-  --scondary-white: #e6f8f5;
+  --secondary-white: #e6f8f5;
   --alternative-white: #e6e9f8;
   --accent-white: #fdf9eb;
+  --danger-white: #f8ebea;
 
   // Dark Midnight Blue
   --primary-darker: #192534;
@@ -42,4 +43,10 @@
   --accent: #ffd335;
   --accent-dark: #a08834;
   --accent-darker: #5e5125;
+
+  --danger-disabled: #b91d0c;
+  --danger-active: #d52815;
+  --danger: #b91d0c;
+  --danger-light: #d52815;
+  --danger-lighter: #ec9b92;
 }

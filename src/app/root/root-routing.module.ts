@@ -8,6 +8,12 @@ const routes: Routes = [
     path: '',
     component: RootComponent,
     canActivate: [LoginGuard],
+    children: [
+      {
+        path: 'competitions',
+        loadChildren: './../competition/competition.module#CompetitionModule',
+      },
+    ],
   },
 ];
 

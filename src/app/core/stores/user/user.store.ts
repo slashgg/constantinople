@@ -5,6 +5,7 @@ import { UserActions } from '@core/stores/user/user.actions';
 export const initialState: UserState = {
   user: undefined,
   initialized: false,
+  authToken: undefined,
 };
 
 export function userReducer(state: UserState = initialState, action: Actions): UserState {
@@ -14,17 +15,15 @@ export function userReducer(state: UserState = initialState, action: Actions): U
         ...state,
         initialized: true,
         user: action.user,
+        authToken: action.authToken,
       };
-      break;
     case UserActions.REMOVE_USER:
       return {
         ...state,
         initialized: true,
         user: undefined,
       };
-      break;
     default:
       return state;
-      break;
   }
 }

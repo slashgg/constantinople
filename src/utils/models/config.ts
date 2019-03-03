@@ -6,6 +6,7 @@ export interface ConfigOptions {
   auth: Authentication;
   authDomain: string;
   localDomain: string;
+  apiURL: string;
 }
 
 export class Config {
@@ -14,6 +15,8 @@ export class Config {
 
   public authDomain: string;
   public localDomain: string;
+
+  public apiURL: string;
 
   constructor(opts: ConfigOptions) {
     this.localDomain = opts.localDomain;
@@ -29,5 +32,6 @@ export class Config {
     };
 
     this.authDomain = opts.authDomain;
+    this.apiURL = opts.apiURL;
   }
 }

@@ -10,7 +10,7 @@ export enum UserActions {
 export class SetUser implements Action {
   readonly type = UserActions.SET_USER;
 
-  constructor(public user: User) {}
+  constructor(public user: User, public authToken: string) {}
 }
 
 export class RemoveUser implements Action {

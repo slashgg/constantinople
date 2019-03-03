@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 export enum ButtonType {
   Primary = 'primary',
@@ -12,6 +12,7 @@ export enum ButtonType {
   selector: 'gg-button',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonComponent {
   @Output() click: EventEmitter<void> = new EventEmitter<void>();
@@ -19,13 +20,14 @@ export class ButtonComponent {
   @Input() type: ButtonType = ButtonType.Primary;
   @Input() hollow = false;
 
-  public onClick() {
+  public onClick(event: Event) {
+    event.stopPropagation();
     this.click.emit();
   }
 
   public classes() {
     const classes = {
-      'btn flex items-center justify-center transition shadow min-w-20 py-2 px-3 outline-none uppercase': true,
+      'btn flex items-center justify-center transition shadow min-w-10 py-1 px-2 outline-none': true,
       'hollow border': this.hollow,
       rounded: true,
       [this.type]: true,
