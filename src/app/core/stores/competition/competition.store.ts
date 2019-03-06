@@ -9,11 +9,15 @@ export const initialState: CompetitionState = {
 
 export function competitionReducer(state: CompetitionState = initialState, actions: Actions): CompetitionState {
   switch (actions.type) {
+    case CompetitionActions.COMPETITIONS_INIT_FINISHED:
+      return {
+        ...state,
+        initialized: true,
+      };
     case CompetitionActions.COMPETITIONS_LOADED:
       return {
         ...state,
         competitions: actions.competitions,
-        initialized: true,
       };
     case CompetitionActions.COMPETITION_SET:
       return {

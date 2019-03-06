@@ -18,11 +18,11 @@ export class UserService {
       authority: config.auth.authority,
       redirect_uri: config.auth.redirectUri,
       silent_redirect_uri: config.auth.silentRedirectUri,
-      automaticSilentRenew: false,
+      automaticSilentRenew: true,
       client_id: config.auth.client_id,
       response_type: config.auth.response_type,
       scope: config.auth.scope,
-      // userStore: new WebStorageStateStore({ store: localStorage }),
+      userStore: new WebStorageStateStore({ store: localStorage }),
       loadUserInfo: true,
     });
 
@@ -33,7 +33,9 @@ export class UserService {
   public async initialize() {
     try {
       const user = await this.userManager.getUser();
-      if (user) {
+      if (user.expires_in < 0) {
+        this.handleUserUnloaded();
+      } else if (user) {
         this.handleUserLoaded(user);
       } else {
         this.handleUserUnloaded();

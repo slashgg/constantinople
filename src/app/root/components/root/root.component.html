@@ -1,9 +1,11 @@
-<div class="root flex">
+<div *ngIf="initialized; else loading" class="root flex">
   <gg-side-nav></gg-side-nav>
   <div class="flex flex-col w-full h-full">
     <gg-topbar></gg-topbar>
-    <main class="h-screen overflow-auto">
+    <main class="h-screen overflow-auto w-full">
       <router-outlet></router-outlet>
     </main>
   </div>
 </div>
+
+<ng-template #loading><p>Loading...</p></ng-template>

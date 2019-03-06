@@ -1,0 +1,11 @@
+<div class="flex flex-col">
+  <div class="mb-1">
+    <label [for]="name">{{ label }}</label>
+  </div>
+  <input
+    type="text"
+    [formControl]="control"
+    [name]="name"
+    class="input py-2 pl-3 bg-white border border-grey-lighter w-full rounded"
+  />
+</div>

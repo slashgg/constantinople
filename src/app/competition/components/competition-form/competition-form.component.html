@@ -1,0 +1,9 @@
+<form [formGroup]="competitionForm">
+  <div class="my-2">
+    <gg-form-group title="Basics">
+      <gg-text-input [control]="competitionForm.get('name')" label="Name" name="name"></gg-text-input>
+    </gg-form-group>
+  </div>
+
+  <gg-button (click)="onSubmit()">Submit</gg-button>
+</form>

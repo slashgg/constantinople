@@ -19,6 +19,7 @@ export class ButtonComponent {
   @Input() disabled = false;
   @Input() type: ButtonType = ButtonType.Primary;
   @Input() hollow = false;
+  @Input() linkTo: string;
 
   public onClick(event: Event) {
     event.stopPropagation();

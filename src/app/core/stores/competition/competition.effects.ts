@@ -6,6 +6,7 @@ import {
   Actions as CompetitionDispatchActions,
   CompetitionActions,
   CompetitionSelected,
+  CompetitionsInitiFinished,
   CompetitionsLoaded,
 } from '@core/stores/competition/competition.actions';
 import { Actions, Effect, ofType } from '@ngrx/effects';
@@ -34,6 +35,7 @@ export class CompetitionEffects {
               effects.push(new CompetitionSelected(competition));
             }
           }
+          effects.push(new CompetitionsInitiFinished());
           return effects;
         }),
         catchError(() => EMPTY)

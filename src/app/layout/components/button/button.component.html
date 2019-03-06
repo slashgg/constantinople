@@ -1,3 +1,10 @@
-<button (click)="onClick($event)" [disabled]="disabled" [ngClass]="classes()">
-  <ng-content></ng-content>
-</button>
+<a *ngIf="linkTo; else noLink" [routerLink]="linkTo" [ngClass]="classes()">
+  <ng-container *ngTemplateOutlet="content"></ng-container>
+</a>
+<ng-template #noLink>
+  <button (click)="onClick($event)" [disabled]="disabled" [ngClass]="classes()">
+    <ng-container *ngTemplateOutlet="content"></ng-container>
+  </button>
+</ng-template>
+
+<ng-template #content><ng-content></ng-content></ng-template>

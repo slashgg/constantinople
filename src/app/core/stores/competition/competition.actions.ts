@@ -5,6 +5,7 @@ import { Action } from '@ngrx/store';
 
 export enum CompetitionActions {
   COMPETITIONS_INIT = '[Competition] Init',
+  COMPETITIONS_INIT_FINISHED = '[Competition] Init Finished',
   COMPETITIONS_GET = '[Competition] Get',
   COMPETITIONS_LOADED = '[Competition] Loaded',
   COMPETITION_SET = '[Competiton] Set',
@@ -24,10 +25,19 @@ export class CompetitionsLoaded implements Action {
   constructor(public competitions: Competition[]) {}
 }
 
+export class CompetitionsInitiFinished implements Action {
+  readonly type = CompetitionActions.COMPETITIONS_INIT_FINISHED;
+}
+
 export class CompetitionSelected implements Action {
   readonly type = CompetitionActions.COMPETITION_SET;
 
   constructor(public competition: Competition) {}
 }
 
-export type Actions = InitCompetitions | CompetitionsLoaded | CompetitionSelected | GetCompetitions;
+export type Actions =
+  | InitCompetitions
+  | CompetitionsInitiFinished
+  | CompetitionsLoaded
+  | CompetitionSelected
+  | GetCompetitions;

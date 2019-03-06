@@ -1,5 +1,7 @@
-<article class="my-2">
-  <gg-interactable (click)="onSelect()">
-    {{ competition.name }}
+<article class="my-2 w-80">
+  <gg-interactable (click)="onSelect()" [selected]="selected">
+    <p class="p-2">
+      {{ competition.name }}
+    </p>
   </gg-interactable>
 </article>

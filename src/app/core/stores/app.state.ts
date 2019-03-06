@@ -1,10 +1,11 @@
 import { competitionReducer, CompetitionState } from '@core/stores/competition';
-import { permissionsReducer } from '@core/stores/permissions';
+import { permissionsReducer, PermissionsState } from '@core/stores/permissions';
 import { userReducer, UserState } from '@core/stores/user';
 
 export interface AppState {
   user: UserState;
   competition: CompetitionState;
+  permission: PermissionsState;
 }
 
 export const constantinopleStore = {
