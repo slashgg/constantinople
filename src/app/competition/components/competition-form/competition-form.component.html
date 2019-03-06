@@ -1,7 +1,41 @@
 <form [formGroup]="competitionForm">
-  <div class="my-2">
+  <div>
     <gg-form-group title="Basics">
-      <gg-text-input [control]="competitionForm.get('name')" label="Name" name="name"></gg-text-input>
+      <div class="w-80 mb-3">
+        <gg-input [control]="competitionForm.get('name')" label="Name" name="name"></gg-input>
+      </div>
+      <div class="w-80 mb-3">
+        <gg-input [control]="competitionForm.get('slug')" label="Slug" name="slug"></gg-input>
+      </div>
+      <div class="w-80 mb-3">
+        <gg-input [control]="competitionForm.get('title')" label="Title" name="title"></gg-input>
+      </div>
+      <div class="w-80 mb-3">
+        <gg-text-area
+          [control]="competitionForm.get('description')"
+          label="Description"
+          textAreaClass="h-32"
+          name="description"
+        ></gg-text-area>
+      </div>
+    </gg-form-group>
+    <gg-form-group title="Team Size">
+      <div class="w-24 mb-3">
+        <gg-input
+          type="number"
+          [control]="competitionForm.get('maxTeamSize')"
+          label="Max Team Size"
+          name="max-team-size"
+        ></gg-input>
+      </div>
+      <div class="w-24 mb-3">
+        <gg-input
+          type="number"
+          [control]="competitionForm.get('minTeamSize')"
+          label="Min Team Size"
+          name="min-team-size"
+        ></gg-input>
+      </div>
     </gg-form-group>
   </div>
 

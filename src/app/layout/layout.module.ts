@@ -8,9 +8,10 @@ import { DropdownComponent } from 'layout/components/dropdown/dropdown';
 import { DropdownHeadComponent } from 'layout/components/dropdown/dropdown-head';
 import { DropdownTailComponent } from 'layout/components/dropdown/dropdown-tail';
 import { FormGroupComponent } from 'layout/components/form-group';
+import { InputComponent } from 'layout/components/input';
 import { InteractableComponent } from 'layout/components/interactable';
 import { TailComponent } from 'layout/components/tail';
-import { TextInputComponent } from 'layout/components/text-input';
+import { TextAreaComponent } from 'layout/components/text-area';
 
 const COMPONENTS = [
   TailComponent,
@@ -20,8 +21,9 @@ const COMPONENTS = [
   DropdownTailComponent,
   ClickoutDetectorComponent,
   ButtonComponent,
-  TextInputComponent,
+  InputComponent,
   FormGroupComponent,
+  TextAreaComponent,
 ];
 
 @NgModule({

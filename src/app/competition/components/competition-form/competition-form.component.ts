@@ -14,8 +14,6 @@ export class CompetitionFormComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit() {
-    console.log('submit');
-    console.log(this.competitionForm.value);
     return;
   }
 
@@ -27,6 +25,8 @@ export class CompetitionFormComponent implements OnInit {
       description: [''],
       maxTeamSize: [5],
       minTeamSize: [1, Validators.compose([Validators.required, Validators.min(1)])],
+      competitionLevelId: ['', Validators.compose([Validators.required])],
+      ruleSlug: [''],
     });
   }
 }
