@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CompetitionService } from '@core/services/competition';
+import { CompetitionLevel } from 'competition/models/competition-level.model';
 
 @Component({
   selector: 'gg-competition-form',
@@ -7,11 +9,21 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class CompetitionFormComponent implements OnInit {
   public competitionForm: FormGroup;
-  constructor(private formBuilder: FormBuilder) {
+  public competitionLevels: CompetitionLevel[] = [];
+  constructor(private formBuilder: FormBuilder, private competitionService: CompetitionService) {
     this.buildForm();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.competitionService.getCompetitionLevels().subscribe(levels => {
+      this.competitionLevels = levels;
+      if (!this.competitionForm.value.competitionLevelId.length) {
+        this.competitionForm.setValue({
+          competitionlevelId: this.competitionLevels[0].id,
+        });
+      }
+    });
+  }
 
   onSubmit() {
     return;
