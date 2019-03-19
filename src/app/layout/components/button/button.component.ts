@@ -28,7 +28,7 @@ export class ButtonComponent {
 
   public classes() {
     const classes = {
-      'btn flex items-center justify-center transition shadow min-w-10 py-1 px-2 outline-none': true,
+      'btn flex items-center justify-center transition shadow min-w-10 py-2 px-2 outline-none': true,
       'hollow border': this.hollow,
       rounded: true,
       [this.type]: true,

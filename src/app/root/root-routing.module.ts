@@ -13,6 +13,10 @@ const routes: Routes = [
         path: 'competitions',
         loadChildren: './../competition/competition.module#CompetitionModule',
       },
+      {
+        path: 'tournaments',
+        loadChildren: './../tournament/tournament.module#TournamentModule',
+      },
     ],
   },
 ];

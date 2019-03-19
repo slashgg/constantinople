@@ -5,6 +5,7 @@ import { SlashCommonModule } from 'common/common.module';
 import { CompetitionRoutingModule } from 'competition/competition-routing.module';
 import { CompetitionFormComponent } from 'competition/components/competition-form';
 import { CompetitionItemComponent } from 'competition/components/competition-item';
+import { CompetitionOverviewComponent } from 'competition/pages/competition-overview/competition-overview.component';
 import { CompetitionSelectPageComponent } from 'competition/pages/competition-select';
 import { CreateCompetitionPageComponent } from 'competition/pages/create-competition';
 import { LayoutModule } from 'layout';
@@ -16,6 +17,7 @@ import { LayoutModule } from 'layout';
     CompetitionItemComponent,
     CreateCompetitionPageComponent,
     CompetitionFormComponent,
+    CompetitionOverviewComponent,
   ],
 })
 export class CompetitionModule {}

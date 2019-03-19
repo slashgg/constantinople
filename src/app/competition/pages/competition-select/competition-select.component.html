@@ -1,7 +1,4 @@
 <div class="px-2">
-  <header>
-    <h1 class="text-center">Competitions</h1>
-  </header>
   <gg-permission-gate permission="admin::competition::*::*">
     <div class="flex justify-end mb-8">
       <gg-button linkTo="/competitions/new">
@@ -9,14 +6,18 @@
       </gg-button>
     </div>
   </gg-permission-gate>
-  <section>
-    <p>Select the competition you want to manage</p>
-    <div *ngFor="let competition of competitions" class="flex flex-col items-center">
-      <gg-competition-item
-        [competition]="competition"
-        [selected]="competition.id === (selectedCompetition && selectedCompetition.id)"
-        (select)="onSelect($event)"
-      ></gg-competition-item>
-    </div>
-  </section>
+  <div class="flex justify-center">
+    <section class="shadow bg-white pb-4">
+      <p class="text-center text-lg py-2">Select Competition</p>
+      <div *ngFor="let competition of competitions" class="flex flex-col items-center">
+        <div class="my-1">
+          <gg-competition-item
+            [competition]="competition"
+            [selected]="competition.id === (selectedCompetition && selectedCompetition.id)"
+            (select)="onSelect($event)"
+          ></gg-competition-item>
+        </div>
+      </div>
+    </section>
+  </div>
 </div>

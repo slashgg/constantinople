@@ -1,7 +1,12 @@
-<article class="my-2 w-80">
-  <gg-interactable (click)="onSelect()" [selected]="selected">
-    <p class="p-2">
-      {{ competition.name }}
-    </p>
-  </gg-interactable>
+<article class="w-80 flex px-2">
+  <div class="w-80 mr-1">
+    <gg-interactable (click)="onSelect()" [selected]="selected">
+      <p class="p-2">
+        {{ competition.name }}
+      </p>
+    </gg-interactable>
+  </div>
+  <gg-button [hollow]="true" [linkTo]="competitionUrl()">
+    Edit
+  </gg-button>
 </article>

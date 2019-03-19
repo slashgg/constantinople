@@ -1,0 +1,10 @@
+:host {
+  display: table-header-group;
+}
+
+:host ::ng-deep .gg-table-header {
+  &:first-of-type {
+    border-left: 0.1rem solid var(--grey-lighter);
+    border-radius: 0.25rem;
+  }
+}

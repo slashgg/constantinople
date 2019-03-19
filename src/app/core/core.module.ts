@@ -3,6 +3,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { CompetitionSelectorComponent } from '@core/components/side-nav/competition-selector';
 import { SideNavComponent } from '@core/components/side-nav/side-nav';
+import { SideNavItemComponent } from '@core/components/side-nav/side-nav-item';
 import { TopbarComponent } from '@core/components/topbar';
 import { CoreRoutingModule } from '@core/core-routing.module';
 import { userInitializer, UserInitServce } from '@core/initializers/user';
@@ -24,6 +25,7 @@ const IMPORTS = [CommonModule, CoreRoutingModule, LayoutModule];
     TopbarComponent,
     SideNavComponent,
     CompetitionSelectorComponent,
+    SideNavItemComponent,
   ],
   providers: [
     UserInitServce,

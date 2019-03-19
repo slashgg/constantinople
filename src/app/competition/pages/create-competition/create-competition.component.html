@@ -1,6 +1,6 @@
 <main class="px-2">
-  <header>
+  <header class="mb-4">
     <h1>New Competition</h1>
   </header>
-  <gg-competition-form></gg-competition-form>
+  <gg-competition-form (formSubmit)="onSubmit($event)" [formError]="formError"></gg-competition-form>
 </main>

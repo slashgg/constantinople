@@ -29,7 +29,6 @@ export class CompetitionSelectPageComponent implements OnInit, OnDestroy {
   }
 
   onSelect(competition: Competition) {
-    console.log('ok');
     this.store.dispatch(new CompetitionSelected(competition));
   }
 }

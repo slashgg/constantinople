@@ -10,6 +10,13 @@ import { DropdownTailComponent } from 'layout/components/dropdown/dropdown-tail'
 import { FormGroupComponent } from 'layout/components/form-group';
 import { InputComponent } from 'layout/components/input';
 import { InteractableComponent } from 'layout/components/interactable';
+import { SelectComponent } from 'layout/components/select';
+import { TableComponent } from 'layout/components/table/table';
+import { TableBodyComponent } from 'layout/components/table/table-body';
+import { TableCellComponent } from 'layout/components/table/table-cell';
+import { TableHeadComponent } from 'layout/components/table/table-head';
+import { TableHeaderComponent } from 'layout/components/table/table-header';
+import { TableRowComponent } from 'layout/components/table/table-row';
 import { TailComponent } from 'layout/components/tail';
 import { TextAreaComponent } from 'layout/components/text-area';
 
@@ -24,6 +31,13 @@ const COMPONENTS = [
   InputComponent,
   FormGroupComponent,
   TextAreaComponent,
+  SelectComponent,
+  TableComponent,
+  TableCellComponent,
+  TableHeadComponent,
+  TableHeaderComponent,
+  TableBodyComponent,
+  TableRowComponent,
 ];
 
 @NgModule({

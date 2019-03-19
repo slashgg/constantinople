@@ -1,0 +1,21 @@
+<main class="px-2">
+  <header class="mb-4">
+    <h1>
+      Tournaments
+    </h1>
+  </header>
+  <section>
+    <gg-table>
+      <gg-table-head>
+        <gg-table-header label="Name"></gg-table-header>
+        <gg-table-header label="State"></gg-table-header>
+        <gg-table-header label="Start Date"></gg-table-header>
+        <gg-table-header label="End Date"></gg-table-header>
+        <gg-table-header label="Parent Tournament"></gg-table-header>
+      </gg-table-head>
+      <gg-table-body>
+        <gg-tournament-row *ngFor="let tournament of tournaments" [tournament]="tournament"></gg-tournament-row>
+      </gg-table-body>
+    </gg-table>
+  </section>
+</main>

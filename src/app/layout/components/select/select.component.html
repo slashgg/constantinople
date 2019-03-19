@@ -1,0 +1,10 @@
+<div class="flex flex-col">
+  <div class="mb-1">
+    <label [for]="name">{{ label }}</label>
+  </div>
+  <select [name]="name" [formControl]="control" class="border p-2">
+    <option *ngFor="let option of options" [value]="option[valueKey]">
+      {{ option[displayKey] }}
+    </option>
+  </select>
+</div>

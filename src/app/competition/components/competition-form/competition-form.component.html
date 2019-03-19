@@ -37,7 +37,20 @@
         ></gg-input>
       </div>
     </gg-form-group>
+    <gg-form-group title="Misc">
+      <div class="w-80 mb-3">
+        <gg-input [control]="competitionForm.get('ruleSlug')" label="Rule Slug" name="rule-slug"></gg-input>
+      </div>
+      <div class="w-80 mb-3">
+        <gg-select
+          [control]="competitionForm.get('competitionLevelId')"
+          [options]="competitionLevels"
+          label="Competition Level"
+          valueKey="id"
+          displayKey="name"
+        ></gg-select>
+      </div>
+    </gg-form-group>
   </div>
-
   <gg-button (click)="onSubmit()">Submit</gg-button>
 </form>

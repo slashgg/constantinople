@@ -1,5 +1,11 @@
-<aside class="min-w-40 h-screen shadow bg-grey-lightest">
-  <nav class="flex flex-col w-full h-full">
+<aside class="min-w-40 h-screen shadow-lg">
+  <nav class="flex flex-col w-full h-full pt-2">
+    <section>
+      <p class="font-bold px-2">Competition</p>
+      <div class="mt-2">
+        <gg-side-nav-item label="Tournaments" linkTo="/tournaments"></gg-side-nav-item>
+      </div>
+    </section>
     <div class="flex flex-col items-center w-full mt-auto pb-2">
       <gg-competition-selector></gg-competition-selector>
       <p class="mb-2">{{ user.username }}</p>
